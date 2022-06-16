@@ -5,7 +5,8 @@ const modesensSchema=new Schema({
     name:String,
     line:Date,
     price:Number,
-    stores:Number
+    stores:Number,
+    type:String
 })
 const Kids=model("Kids",modesensSchema)
 const Beauty=model("beauties",modesensSchema)

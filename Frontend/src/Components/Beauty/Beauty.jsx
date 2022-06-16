@@ -1,4 +1,3 @@
-import { FilterProducts } from './FilterProducts';
 import "./beauty.css"
 import {
   Box,
@@ -8,39 +7,102 @@ import {
   Text,
   Stack,
   Image,
-  Flex,
   Grid,
-  Button
+  Button,
+  CheckboxGroup,
+  VStack,
+  Checkbox,
+  Flex
 } from '@chakra-ui/react';
-import axios from "axios"
+import { AiOutlineHeart } from "react-icons/di";
+
+import { useDispatch, useSelector} from "react-redux"
+import { getData } from "../../Redux/PagesRedux/action";
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-const IMAGE =
-  'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
+import { Link, useSearchParams } from 'react-router-dom';
+
 
 export default function BeautyProducts() {
-  const [beautyData,setBeautyData]=useState([])
-    const GetData=()=>{
-      axios.get("http://localhost:8080/modesens/beauty")
-      .then(({data})=>{
-        setBeautyData(data)
-      })
-      console.log(beautyData);
-    }
-    useEffect(()=>{
-      GetData()
-    },[])
+  const [page,setPage]=useState(1)
+  const beautyData=useSelector((state)=>state.products.products)
+  const [SearchParams,setSearchParams]=useSearchParams()
+  const [filterData,setFilterData]=useState(SearchParams.getAll("type")||[])
+  const dispatch=useDispatch()
+
+  const handleFilter=(value)=>{
+    setFilterData(value)
+    // console.log(filterData);
+    console.log(value);
+  }
+  
+
+  useEffect(()=>{
+    setSearchParams({type:filterData})
+    let mainParams={type:SearchParams.getAll("type")}
+    dispatch(getData(mainParams,page))
+  },[filterData,SearchParams,dispatch,setSearchParams,page])
   return (
     <>
+      
       <Box textAlign={"left"} marginLeft={"20%"}>
         <Heading>Designer Beauty</Heading>
         <Text fontWeight={500} marginTop={6}>Designer beauty with price comparison across 500+ stores in one place. Discover the latest designer beauty at ModeSens</Text>
       </Box>
+      {/* <Flex justifyContent={"center"} marginTop={10}>
+        <Button disabled={page===1} onClick={()=>setPage(page-1)}>prev</Button>
+        <Text>page-{page}</Text>
+        <Button onClick={()=>setPage(page+1)}>Next</Button>
+      </Flex> */}
       <Box>
         <Stack display={{md:"flex"}} flexDirection={{md:"row"}} >
           <Box width='20%'>
-            <FilterProducts />
+          <Box >
+       <Box >
+        <Box >
+            <Text marginLeft={"-44%"} fontWeight={"400"} marginBottom={1} marginTop={"10%"}>10,000+ ITEMS</Text>
+            <Text marginBottom={1} fontSize="18px" marginLeft={"-50%"} fontWeight={"500"}>Filter By:</Text>
+            <CheckboxGroup colorScheme='green' defaultValue={filterData} onChange={handleFilter} >
+              <VStack alignItems={"baseline"} marginLeft={"18%"} >
+                <Checkbox value={"mens"}>Mens' Clothing</Checkbox>
+                < Checkbox value={"womens"}>Womens' Clothing</Checkbox>
+                <Checkbox value={"kids"} >Kids Clothing</Checkbox>
+              </VStack>
+            </CheckboxGroup>
+            <Button colorScheme='#000' backgroundColor={"black"} marginTop={10} marginLeft={"-20%"} width={"50%"}>Save My Search</Button>
+        </Box>
+       </Box>
+       <Box textAlign={"left"} marginLeft={"18%"} marginTop={10} lineHeight={8}>
+          <Text fontWeight={"bold"}>Related Category Women</Text>
+          <Text>Beauty Sale</Text>
+          <Text>Beauty</Text>
+          <Text>Home</Text>
+          <Text>Accessories</Text>
+          <Text>Bags</Text>
+          <Text>Clothing</Text>
+          <Text>Shoes</Text>
+       </Box>
+       <Box textAlign={"left"} marginLeft={"18%"} marginTop={10} lineHeight={8}>
+          <Text fontWeight={"bold"}>Related Category Women</Text>
+          <Text>Grooming Sale</Text>
+          <Text>Grooming</Text>
+          <Text>Home</Text>
+          <Text>Accessories</Text>
+          <Text>Bags</Text>
+          <Text>Clothing</Text>
+          <Text>Shoes</Text>
+       </Box>
+       <Box textAlign={"left"} marginLeft={"18%"} marginTop={10} lineHeight={8}>
+          <Text fontWeight={"bold"}>Related Category Kids</Text>
+          <Text>Care Sale</Text>
+          <Text>Care</Text>
+          <Text>Home</Text>
+          <Text>Accessories</Text>
+          <Text>Bags</Text>
+          <Text>Clothing</Text>
+          <Text>Shoes</Text>
+       </Box>
+      </Box>
           </Box>
           <Box width='80%'>
               {/* <Heading as="h3" textAlign="center" fontSize={'3xl'}>ALL Products</Heading> */}              
@@ -119,7 +181,7 @@ export default function BeautyProducts() {
             </Text>
           </Stack>
           <Link to={`/ProductPage/${Id}`} style={{textDecoration:"none" ,color:"CaptionText"}}>
-          <Button colorScheme='teal' variant='outline'width={200}  className="QuickView">
+          <Button colorScheme='teal' variant='outline' width={200}  className="QuickView">
             Quick View
           </Button>
           </Link>

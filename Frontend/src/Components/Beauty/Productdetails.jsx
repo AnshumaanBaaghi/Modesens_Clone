@@ -17,7 +17,7 @@ const Productdetails = () => {
         .then((res)=>{
             setData(res.data)
         })
-    },[])
+    },[id])
     const handleCart=()=>{
         
     }
@@ -41,14 +41,14 @@ const Productdetails = () => {
                                 <Text fontSize="25" color="black">${el?.price} USD</Text>
                             </Box>
                             <Box>
-                                <Text fontSize="25" color="black">Shop From ${el?.stores} Stores</Text>
+                                <Text fontSize="25" color="black">Shop From {el?.stores} Stores</Text>
                             </Box>
                             <Box>
                                 <Text fontSize="25" color="black" paddingBottom={"10%"}>Join now to earn 276 points from this purchase. <u>Learn more</u></Text>
                             </Box>
                             <Button width="30%" textAlign="center" height='40px' borderRadius="15px" fontSize="20px" backgroundColor="black" color="white" fontWeight="bold" onClick={handleCart}>Add To Cart</Button>
                         
-                            <Button width="20%"  textAlign="center" height='40px' borderRadius="15px" fontSize="18px" marginLeft="2%" backgroundColor="black" color="white" fontWeight="bold" >wishlist  </Button>
+                            <Button width="30%" textAlign="center" height='40px' borderRadius="15px" fontSize="20px" backgroundColor="black" color="white" fontWeight="bold" marginLeft={55} >wishlist  </Button>
                         </Box>
                     </Flex>
                  
