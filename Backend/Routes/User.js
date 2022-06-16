@@ -27,6 +27,12 @@ modesensRouter.get("/beauty",async(req,res)=>{
     const beautyData=await Beauty.find()
     return res.json(beautyData)
 })
+modesensRouter.get("/beauty/:id",async(req,res)=>{
+    const {id}=req.params
+    // const beautyData=await Beauty.find(params)
+    const newsData=await Beauty.find({_id:id})
+    return res.json(newsData)
+})
 
 
 module.exports=modesensRouter

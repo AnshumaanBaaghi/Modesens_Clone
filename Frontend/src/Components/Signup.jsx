@@ -37,18 +37,18 @@ const Signup = () => {
         setLoading(false)
     }
   return (
-    <div className='box mt-5 pt-5  container-fluid '>
-        <div className="row pt-5">
+    <div className='box mt-5   container-fluid '>
+        <div className="row">
             <div className="col">
                 <img src="https://www.linkpicture.com/q/Web-capture_15-6-2022_85521_modesens.com.jpeg" alt="" className='img'/>
             </div>
-            <div className="col mr-3">
-                <p className='text-black lead'>Create an account</p>
-                <p>Compare across 500+ stores<br/>
+            <div className="col mr-3 pt-4 pl-5">
+                <p className=' lead text'>Create an account</p>
+                <p className='text1 pb-4'>Compare across 500+ stores<br/>
                 to find the best price.</p>
-                <input className='mb-2 pl-5 pr-5 text-center' type="text" ref={emailRef} placeholder='Email' />
+                <input className='mb-2 pl-5 pr-5 text-center border height border-dark' type="text" ref={emailRef} placeholder='Email' />
                 <br />
-                <input className='mb-2 pl-5 pr-5 text-center' type="password" ref={passwordRef}placeholder='password'/>
+                <input className='mb-2 pl-5 pr-5 text-center border height border-dark' type="password" ref={passwordRef}placeholder='password'/>
                 <br />
                 <div className="form-group form-check">
                     <input type="checkbox" className="form-check-input pointer" id="exampleCheck1"/>

@@ -4,15 +4,29 @@
     padding-right: 3%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.text{
+    font-size: 30px;
+}
+.text1{
+    font-size: 18px;
+}
 .logos{
-    width: 70%;
+    width: 70%
+}
+.height{
+    height: 35px;
+    border: 1px solid black;
 }
 .pointer{
     cursor: pointer;
 }
 .button{
-    width: 85%;
+    width: 62%;
 }
 .img{
-    height: 76%;
+    margin-left: 15%;
+    height: 100%;
+}
+.details{
+    padding-top: 8%;
 }
