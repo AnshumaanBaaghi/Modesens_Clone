@@ -3,11 +3,13 @@ import { Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../Redux/PagesRedux/action'
 
 const Productdetails = () => {
     const {id}=useParams()
     console.log(id)
-
+    const dispatch=useDispatch()
     const [Data,setData]=useState([])
     useEffect(()=>{
         axios({
@@ -19,7 +21,7 @@ const Productdetails = () => {
         })
     },[id])
     const handleCart=()=>{
-        
+        dispatch(addToCart(Data[0]))
     }
     const LongDes="We will fulfill your order by finding the best price available from our partner stores, applying any applicable promotions and providing assistance on tracking, returns or anything else you may need. "
   return (
@@ -31,7 +33,10 @@ const Productdetails = () => {
                         <Box marginLeft={"18%"} marginRight={"5%"}>
                             <Image src={el?.url} alt='Dan Abramov' height={"350px"} width="110%" marginTop={"30%"} />    
                         </Box>
-                        <Box marginLeft="0%" marginTop="5%" textAlign={"left"} >
+                        <Box marginLeft="0%" marginTop="4%" textAlign={"left"} >
+                            <Box>
+                                <Text fontSize="25" color='GrayText'> Minimum Stock</Text>
+                            </Box>
                             <Heading fontFamily="body" fontSize="40" >{el?.name}</Heading>
                         
                             <Box>

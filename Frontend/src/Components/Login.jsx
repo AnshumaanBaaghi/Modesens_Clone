@@ -27,7 +27,7 @@ const Login = () => {
             setLoading(true)
             await login(emailRef.current.value,passwordRef.current.value)
             alert("Login Successful")
-            navigate("/home")
+            navigate("")
         } catch (error) {
             alert(error.message);
         }
@@ -57,7 +57,7 @@ const Login = () => {
                         <div className="col pointer"><img src="https://cdn.modesens.com/static/img/login-icon/20210617facebook.svg" alt="facebook" onClick={GoogleAuth}/></div>
                         <div className="col pointer"><img src="https://cdn.modesens.com/static/img/login-icon/20210617apple.svg" alt="apple-store" onClick={GoogleAuth}/></div>                    </div>
                 </div>
-                <p className='text-black-50 pt-3 pointer' onClick={()=>navigate("/")} ><u>Don't have an account? Please sign up.</u></p>
+                <p className='text-black-50 pt-3 pointer' onClick={()=>navigate("/signin")} ><u>Don't have an account? Please sign up.</u></p>
             </div>
         </div>
     </div>

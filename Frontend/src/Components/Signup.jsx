@@ -30,7 +30,7 @@ const Signup = () => {
             setLoading(true)
             await signup(emailRef.current.value,passwordRef.current.value)
             alert("Signin Successful")
-            navigate("/home")
+            navigate("/")
         } catch (error) {
             alert(error.message);
         }

@@ -10,4 +10,5 @@ const modesensSchema=new Schema({
 })
 const Kids=model("Kids",modesensSchema)
 const Beauty=model("beauties",modesensSchema)
-module.exports={Kids, Beauty};
+const Cart=model("carts",modesensSchema)
+module.exports={Kids, Beauty, Cart};
