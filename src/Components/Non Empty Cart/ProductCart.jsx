@@ -16,9 +16,19 @@ const data = [
   size:"M",
   price:413.00,
   actualPrice:655.00
- }
+ },
+ {image:"https://img.ssensemedia.com/images/b_white,c_lpad,g_south,h_706,w_470/c_scale,h_280/f_auto,dpr_1.0/221553F052016_1/jacquemus-pink-la-robe-limao-mini-dress.jpg",
+ brand:"JACQUE",
+ desc:"Pink LA Robe",
+ size:"M",
+ price:413.00,
+ actualPrice:655.00
+}
 
 ]
+const orderTotal = data.reduce((acc,el)=>{
+  return acc+el.price
+},0)
 
 const ProductCart = () => {
   return (
@@ -72,6 +82,18 @@ const ProductCart = () => {
             </li>
            ))}
           </ul>
+          <div className='cart-item-total-container'>
+            <div>
+              <div className='cart-item-total'>
+                <div className='cart-item-total-title'>
+                  <span>Total</span>
+                </div>
+                <div className='cart-item-total-price'>
+                  <span>$ {orderTotal} USD</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
      </div>
      <div className='nonEmpty-Container-right'>

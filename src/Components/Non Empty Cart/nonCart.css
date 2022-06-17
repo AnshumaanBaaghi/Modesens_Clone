@@ -198,3 +198,15 @@
     font-size: 11px;
     line-height: 15px;
 }
+.cart-item-total-container{
+    margin-top: 20px;
+}
+.cart-item-total{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.cart-item-total-title{
+    margin-left: 135px;
+    display: flex;
+}
