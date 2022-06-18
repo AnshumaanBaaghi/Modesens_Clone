@@ -1,20 +1,20 @@
 export const branditem = [
     {
-        src : "https://cdn.modesens.com/banner/20220309-modesens-DesignFurniture-364x484.jpg",
-        heading: "Art & Comfort",
-        sub: "Design Furniture",
+        src : "https://modesens.com/banner/12036/getimg/?img=%2Fbanner%2F20220602-modesens-LuisaViaRoma-364x484-F.jpg",
+        heading: "Best of the Best at LUISAVIAROMA",
+        sub: "Up to 50% off",
         btn1title:"SHOP NOW",
     },
     {
-        src : "https://cdn.modesens.com/banner/20220309-modesens-PetAccessories-364x484.jpg",
-        heading: "Four-Legged Style",
-        sub: "Pet Accessories",
+        src : "https://modesens.com/banner/12487/getimg/?img=%2Fbanner%2F20220615Designer-Collab-modesens364x484-F.jpg",
+        heading: "Our Kind of Dream Teams",
+        sub: "Collabration id So in fashion",
         btn1title:"READ NOW",
     },
     {
         src : "https://cdn.modesens.com/banner/20220309-modesens-TechAccessories-364x484.jpg",
         heading: "Smart & Stylish",
-        sub: "Tech Accessories",
+        sub: "Fresh Cut",
         btn1title:"SHOP NOW",
     },
     {
