@@ -3,18 +3,16 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { deleteCartData } from '../../Redux/PagesRedux/action'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import "./nonCart.css"
+import { systemProps } from '@chakra-ui/react'
 
 
-// const orderTotal = data.reduce((acc,el)=>{
-//   return acc+el.price
-// },0)
 
 const ProductCart = () => {
   const dispatch=useDispatch()
-const [Data,setData]=useState([])
-const getCartData=()=>{
+  const [Data,setData]=useState([])
+  const getCartData=()=>{
     axios({
         url:`http://localhost:8080/modesens/cart`,
         method:"GET"
@@ -23,15 +21,15 @@ const getCartData=()=>{
     }).catch((err)=>{
         console.log("unable to get product from ur cart-", err);
     })
-}
-useEffect(()=>{
-  getCartData()
-},[Data,setData])
+  }
+  useEffect(()=>{
+    getCartData()
+  },[Data,setData])
 
-const removeProduct=(id)=>{
-  dispatch(deleteCartData(id))
-  console.log(id);
-}
+  const removeProduct=(id)=>{
+    dispatch(deleteCartData(id))
+    console.log(id);
+  }
   const orderTotal = Data.reduce((acc,el)=>{
     return acc+el.price
   },0)
@@ -55,34 +53,6 @@ const removeProduct=(id)=>{
           {/* Item start */}
           <ul className='cart-list-item-container'>
            {Data.map((el)=>(
-            // <li className='cart-itemslist'>
-            //   <div className='cart-itemslist-container'> 
-            //     <div className='cart-itemslist-container-left'>
-            //       <div className='cart-left-image'>
-            //         <img src={el.url} alt="brand_image" />
-            //       </div>
-            //       <div className='cart-left-description'>
-            //         <div>
-            //           <div>{el.name}</div>
-            //           <div>soapless Gentle Foaming Cleaning, 85G</div>
-            //         </div>
-            //       </div>
-            //     </div>
-            //     <div className='cart-itemlist-container-right'>
-            //       <div className='cart-item-price-and-remove'>
-            //         <div className='cart-item-price'>
-            //           <div className='discount-price'>$ {el.price} USD</div>
-            //           {/* <div className='actual-price'>$ {el.actualPrice} USD</div> */}
-            //         </div>
-            //         <div className='cart-item-remove'>
-            //          <a href rel='nofollow'>
-            //          <span className='cart-remove-button' onClick={handleRemove(el._id)}>Remove</span>
-            //          </a>
-            //         </div>
-            //       </div>
-            //     </div>
-            //   </div>
-            // </li>
               <CartProdMapData Id={el._id} image={el.url} name={el.name} price={el.price} handleDelete={removeProduct}/>
            ))}
           </ul>
@@ -120,6 +90,9 @@ const removeProduct=(id)=>{
     </div>
   )
 }
+
+
+
 
 const CartProdMapData=({Id,image,name,price,handleDelete})=>{
   console.log(image);
