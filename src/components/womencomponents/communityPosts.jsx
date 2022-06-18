@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-    border: .1px solid #cdcdcd;
+   
     position: relative;
    width:100%;
    height: 296px;
@@ -40,7 +40,7 @@ const SlideItem = styled.img`
 const carouselItems = communityPosts.map((e) => (
   <Container  className="slideDiv">
 
-    <div style={{  display: "flex",border: "none",justifyContent: "center",padding: "20px 8px", height: "100%",width:"70%",margin: "auto"}}>
+    <div style={{  display: "flex",border: "none",justifyContent: "center",padding: "20px 8px", height: "100%",width:"85%",margin: "auto"}}>
       <SlideItem style={{width: "100%"}} src={e.src} />
     </div>
     
@@ -78,7 +78,7 @@ export default class AutoPlayCarousel extends React.Component {
           requestToChangeActive={this.onChange}
           rightChevron={
             <button
-              style={{ border: "none", background: "white", fontSize: "35px",fontWeight:"100" }}
+              style={{ border: "none", background: "white", fontSize: "35px",fontWeight:"100",color:"gray" }}
             >
               {" "}
               {"→"}
@@ -86,7 +86,7 @@ export default class AutoPlayCarousel extends React.Component {
           }
           leftChevron={
             <button
-              style={{ border: "none", background: "white", fontSize: "35px",fontWeight:"100" }}
+              style={{ border: "none", background: "white", fontSize: "35px",fontWeight:"100",color:"gray" }}
             >
               {"←"}
             </button>

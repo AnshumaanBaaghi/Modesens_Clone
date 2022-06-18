@@ -19,7 +19,7 @@ const Button = styled.button`
     border: 1px solid black;
     margin: 0 auto;
     /* padding: 5px 40px; */
-    width: 80%;
+    width: 85%;
     position: absolute;
     font-weight: bold;
     top: 60%;
@@ -31,7 +31,7 @@ z-index : 99;
 
 `
 const Container = styled.div`
-    border: .1px solid #cdcdcd;
+    margin:25px;
     position: relative;
     &:hover ${Button}{
       display: block;
@@ -39,7 +39,7 @@ const Container = styled.div`
 `
 
 const SlideItem = styled.img`
-  height: 260px;
+  height: 200px;
   width: 80%;
   background: #eee;
   display: flex;
@@ -134,7 +134,7 @@ export default class AutoPlayCarousel extends React.Component {
           requestToChangeActive={this.onChange}
           rightChevron={
             <button
-              style={{ border: "none", background: "white", fontSize: "35px",fontWeight:"100" }}
+              style={{ border: "none", background: "white", fontSize: "35px",fontWeight:"100",color:"gray" }}
             >
               {" "}
               {"→"}
@@ -142,7 +142,7 @@ export default class AutoPlayCarousel extends React.Component {
           }
           leftChevron={
             <button
-              style={{ border: "none", background: "white", fontSize: "35px",fontWeight:"100" }}
+              style={{ border: "none", background: "white", fontSize: "35px",fontWeight:"100",color:"gray" }}
             >
               {"←"}
             </button>

@@ -2,55 +2,55 @@ export const trenddata = [
    
 
     {
-        src: "https://cdn.modesens.com/product/23328178_2?w=400&",
-        title: "VERSACE",
-        sub: "Versace Black & Gold Medusa Crystal Travel Cup",
-        rate: "$769 - $1100",
-        st: "24 Stores"
+        src: "https://cdn.modesens.com/product/7298931_66?w=400&",
+        title: "BURBERRY",
+        sub: "Bbry carrick te Cn Ss chckd Logo SI",
+        rate: "$217 - $570",
+        st: "25 Stores"
     },
    
     {
-        src: "https://cdn.modesens.com/product/26663844_1?w=400&",
-        title: "VERSACE",
-        sub: "Versace Black Baroque Print Rugby Ball",
-        rate: "$231 - $508",
-        st: "21 Stores"
+        src: "https://cdn.modesens.com/product/40729216_2?w=400&",
+        title: "KHAITE",
+        sub: "Mitsi Black Padded Shell Skirt",
+        rate: "$272 - $1980",
+        st: "24 Stores"
     },
 
     {
-        src: "https://cdn.modesens.com/product/22694641_4?w=400&",
-        title: "VERSACE",
-        sub: "Versace I Love Baroque Porcelain Scented Candle In Gold",
-        rate: "$424 - $825",
-        st: "20 Stores"
+        src: "https://cdn.modesens.com/product/41449769_2?w=400&",
+        title: "JACQUEMUS",
+        sub: "La Robe Limao Cutout Halter Neck",
+        rate: "$340 - $775",
+        st: "23 Stores"
     },
 
     {
-        src: "https://www.neimanmarcus.com/product_assets/H/B/E/H/F/NMHBEHF_mz.jpg",
-        title: "ZIMMERMANN",
-        sub: "Tropicana Patchwork Floral-print Linen-",
-        rate: "$289 - $449",
+        src: "https://cdn.modesens.com/availability/45254795?w=400&",
+        title: "DOLCE & GABBANA",
+        sub: "Retro Logo-Print Oversized T-shirt In",
+        rate: "$232 - $645",
+        st: "18 Stores"
+    },
+    {
+        src: "https://cdn.modesens.com/availability/48287774?w=400&",
+        title: "GANNI",
+        sub: "Women's Black Other Materials Sandals",
+        rate: "$190 - $471",
         st: "20 Stores"
     },
     {
-        src: "https://cdn.modesens.com/product/19704144_9?w=400&",
-        title: "ZIMMERMANN",
-        sub: "Tropicana Belted Patchwork Floral-print",
-        rate: "$473 - $914",
+        src: "https://cdn.modesens.com/product/18444081_124?w=400&",
+        title: "BURBERRY",
+        sub: '+Net Sustain Checked Poplin-trimmed ',
+        rate: "$360 - $619",
         st: "20 Stores"
     },
     {
-        src: "https://cdn.modesens.com/product/33151118_1?w=400&",
-        title: "VIETRI",
-        sub: 'Vietri Hibiscus Medium Fluted Vase In Clear ',
-        rate: "$308 - $645",
-        st: "19 Stores"
-    },
-    {
-        src: "https://www.neimanmarcus.com/product_assets/H/C/A/H/G/NMHCAHG_mz.jpg",
+        src: "https://cdn.modesens.com/product/36820576_6?w=400&",
         title: "VERSACE",
-        sub: "Baroque-print Lace-trimmed Silk-crepe",
-        rate: "$507 - $931",
-        st: "20 Stores"
+        sub: "Multicolor Trigreca Snakers In  A Mix Of",
+        rate: "$484 - $1048",
+        st: "18 Stores"
     }
     ]

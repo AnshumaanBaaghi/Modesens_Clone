@@ -15,7 +15,7 @@ import { Pagination, Navigation } from "swiper";
 export const Brand = () =>{
   return (
     <>
-      <Swiper
+      <Swiper style={{color:"grey"}}
         slidesPerView={1}
         spaceBetween={125}
         loop={true}
