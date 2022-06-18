@@ -3,6 +3,7 @@ import axios from "axios"
 export const GET_DATA_SUCCESS="GET_DATA_SUCCESS"
 export const ADD_TO_CART="ADD_TO_CART"
 export const DELETE_DATA="DELETE_DATA"
+export const GET_CART_DATA="GET_CART_DATA"
 
 export const getDataSuccess=(data)=>(
     {
@@ -43,6 +44,10 @@ export const addToCart=(payload)=>(dispatch)=>{
         console.log(err)
     })
 }
+
+// get cart data..........
+
+
 
 // delete products in cart........................///
 export const deleteData=(payload)=>(

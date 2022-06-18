@@ -48,7 +48,7 @@ modesensRouter.get("/beauty",async(req,res)=>{
 })
 
 // cart.............
-modesensRouter.post("/cart",async(req,res)=>{
+modesensRouter.post("/Cart",async(req,res)=>{
     const Data= await new Cart({...req.body})
     Data.save((err,success)=>{
         res.send(" product added succesfully")
@@ -56,9 +56,18 @@ modesensRouter.post("/cart",async(req,res)=>{
 })
 
 
-modesensRouter.get("/cart",async(req,res)=>{
+modesensRouter.get("/Cart",async(req,res)=>{
     const cartData=await Cart.find()
     return res.json(cartData)
+})
+
+// delete cartdata
+
+modesensRouter.delete("/Cart/:id",async(req,res)=>{
+    const {id}=req.params
+    console.log(id);
+    const deletedData=await  Cart.deleteOne({_id:id})
+    return res.json(deletedData)
 })
 
 

@@ -4,6 +4,7 @@ import BeautyProducts from '../Components/Beauty/Beauty'
 import Productdetails from '../Components/Beauty/Productdetails'
 import Home from '../Components/Home'
 import Login from '../Components/Login'
+import ProductCart from '../Components/Non Empty Cart/ProductCart'
 import Signup from '../Components/Signup'
 
 
@@ -16,6 +17,7 @@ const MainRoutes = () => {
             <Route path='/' element={<Signup/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/home' element={<Home/>}></Route>
+            <Route path='/cart' element={<ProductCart/>}></Route>
         </Routes>
     </div>
   )

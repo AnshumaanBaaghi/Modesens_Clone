@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DELETE_DATA, GET_DATA_SUCCESS } from "./action"
+import { ADD_TO_CART, DELETE_DATA, GET_CART_DATA, GET_DATA_SUCCESS } from "./action"
 
 const init={
   products:[],
