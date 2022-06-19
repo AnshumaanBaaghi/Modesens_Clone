@@ -11,10 +11,9 @@ import {
   Button,
   CheckboxGroup,
   VStack,
-  Checkbox,
-  Flex
+  Checkbox
 } from '@chakra-ui/react';
-import { AiOutlineHeart } from "react-icons/di";
+
 
 import { useDispatch, useSelector} from "react-redux"
 import { getData } from "../../Redux/PagesRedux/action";
@@ -24,7 +23,6 @@ import { Link, useSearchParams } from 'react-router-dom';
 
 
 export default function BeautyProducts() {
-  const [page,setPage]=useState(1)
   const beautyData=useSelector((state)=>state.products.products)
   const [SearchParams,setSearchParams]=useSearchParams()
   const [filterData,setFilterData]=useState(SearchParams.getAll("type")||[])
@@ -40,8 +38,8 @@ export default function BeautyProducts() {
   useEffect(()=>{
     setSearchParams({type:filterData})
     let mainParams={type:SearchParams.getAll("type")}
-    dispatch(getData(mainParams,page))
-  },[filterData,SearchParams,dispatch,setSearchParams,page])
+    dispatch(getData(mainParams))
+  },[filterData,SearchParams,dispatch,setSearchParams])
   return (
     <>
       
@@ -64,9 +62,9 @@ export default function BeautyProducts() {
             <Text marginBottom={1} fontSize="18px" marginLeft={"-50%"} fontWeight={"500"}>Filter By:</Text>
             <CheckboxGroup colorScheme='green' defaultValue={filterData} onChange={handleFilter} >
               <VStack alignItems={"baseline"} marginLeft={"18%"} >
-                <Checkbox value={"mens"}>Mens' Clothing</Checkbox>
-                < Checkbox value={"womens"}>Womens' Clothing</Checkbox>
-                <Checkbox value={"kids"} >Kids Clothing</Checkbox>
+                <Checkbox value={"mens"}>Mens' Products</Checkbox>
+                < Checkbox value={"womens"}>Womens' Products</Checkbox>
+                <Checkbox value={"kids"} >Kids Products</Checkbox>
               </VStack>
             </CheckboxGroup>
             <Button colorScheme='#000' backgroundColor={"black"} marginTop={10} marginLeft={"-20%"} width={"50%"}>Save My Search</Button>

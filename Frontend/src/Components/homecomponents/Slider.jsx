@@ -1,9 +1,9 @@
 import React from "react";
-import range from "lodash.range";
+
 import styled from "styled-components";
 import ItemsCarousel from "react-items-carousel";
 import { branditem } from "../../data/homeSlide.js";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 const noOfItems = 4;
 const noOfCards = 3;
 const autoPlayDelay = 4000;

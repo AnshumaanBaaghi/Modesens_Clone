@@ -20,6 +20,7 @@ const Signup = () => {
         e.preventDefault();
         try {
             await fireAuth.signInWithPopup(provider);
+            alert("Login successfully")
             await navigate("/")
         } catch (error) {
             alert(error.message)

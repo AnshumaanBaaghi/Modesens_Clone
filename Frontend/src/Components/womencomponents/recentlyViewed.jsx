@@ -1,5 +1,5 @@
 import React from "react";
-import range from "lodash/range";
+
 import styled from "styled-components";
 import ItemsCarousel from "react-items-carousel";
 import { recentlyViewed } from "../../data/recentlyViewed";

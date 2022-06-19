@@ -16,9 +16,9 @@ export const getDataSuccess=(data)=>(
 
 export const getData=(payload,page_no)=>(dispatch)=>{
     axios({
-        url:"http://localhost:8080/modesens/beauty",
+        url:"https://modesens-clone-web16.herokuapp.commodesens/beauty",
         method:"GET",
-        params:{...payload,page_no,limit:10}
+        params:{...payload}
     })
     .then((res)=>{
         dispatch(getDataSuccess(res.data))
@@ -34,7 +34,7 @@ export const addtoCartsuccess=(data)=>(
 
 export const addToCart=(payload)=>(dispatch)=>{
     axios({
-        url:"http://localhost:8080/modesens/cart",
+        url:"https://modesens-clone-web16.herokuapp.commodesens/cart",
         method:"POST",
         data:{
             ...payload
@@ -61,7 +61,7 @@ export const deleteData=(payload)=>(
 
 export const deleteCartData=(id)=>(dispatch)=>{
     axios({
-        url:`http://localhost:8080/modesens/cart/${id}`,
+        url:`https://modesens-clone-web16.herokuapp.commodesens/cart/${id}`,
         method:"DELETE"
     }).then((res)=>{
         dispatch(deleteData(res.data))

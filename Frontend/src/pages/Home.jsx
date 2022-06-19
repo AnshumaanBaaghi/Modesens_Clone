@@ -6,7 +6,7 @@ import  SlideItem  from '../Components/homecomponents/trendNew'
 import  RecentView  from '../Components/womencomponents/recentlyViewed'
 import CommunityPost from "../Components/womencomponents/communityPosts"
 import { Bottom } from '../Components/Bottom'
-import {useState} from "react";
+
 import "./Home.css";
 import Homeslider from '../Components/homecomponents/Homeslider'
 export const MainHome = () => {

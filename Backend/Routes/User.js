@@ -2,6 +2,10 @@ const {Router}=require("express")
 const { Kids,Beauty, Cart} =require("../model/user")
 
 const modesensRouter=Router()
+
+modesensRouter.get("/",(req,res)=>{
+    res.send("Your Modesens Application Is Working Very Well")
+})
 // ...Kids route data............................//
 modesensRouter.post("/kids",async(req,res)=>{
     const Data= await new Kids({...req.body})
@@ -29,13 +33,8 @@ modesensRouter.get("/beauty/:id",async(req,res)=>{
     return res.json(newsData)
 })
 
-modesensRouter.get("/beauty",async(req,res)=>{
-    const {page_no}=req.query
+modesensRouter.get("/beauty",async(req,res)=>{ 
     const params=req.query
-    // if(page_no){
-    //     const Beautydata=await Beauty.find().skip((page_no-1)*10).limit(20)
-    //     return res.json(Beautydata)
-    // }
     if(params){
         console.log(params);
         const Data=await Beauty.find(req.query)

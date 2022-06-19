@@ -13,7 +13,7 @@ const Productdetails = () => {
     const [Data,setData]=useState([])
     useEffect(()=>{
         axios({
-            url:`http://localhost:8080/modesens/beauty/${id}`,
+            url:`https://modesens-clone-web16.herokuapp.commodesens/beauty/${id}`,
             method:"GET"
         })
         .then((res)=>{

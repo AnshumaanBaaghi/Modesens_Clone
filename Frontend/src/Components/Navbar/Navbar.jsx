@@ -36,7 +36,7 @@ const Navbar = () => {
                 />
             </div>
             <div className="categories">
-                <div className="women" onClick={()=>navigate("/beauty")}> WOMEN</div>
+                <div className="women" onClick={()=>navigate("/womens")}> WOMEN</div>
                 <div className="womenhide">
 
                     <h5>SHOP ALL</h5>
@@ -104,7 +104,7 @@ const Navbar = () => {
                     <h5>OCCASION</h5>
 
                 </div>
-                <div className="men"> MEN </div>
+                <div className="men" onClick={()=>navigate("/mens")}> MEN </div>
                 <div className="menhide">
 
                     <h5>SHOP ALL</h5>
@@ -126,7 +126,7 @@ const Navbar = () => {
                     <h5>MEN'S GROOMING</h5>
                     <h5>KID'S CARE</h5>
                 </div>
-                <div className="kids"> KIDS</div>
+                <div className="kids" onClick={()=>navigate("/kids")}> KIDS</div>
                 <div className="kidshide">
                     <h5>SHOP ALL</h5>
                     <h5>BABY GIRL</h5>
@@ -170,21 +170,21 @@ const Navbar = () => {
                     </div>
 
                 </div>
-                <div className="offers"> OFFERS</div>
+                <div className="offers" onClick={()=>navigate('/offers')}> OFFERS</div>
                 <div className="offershide">
                     <h5>COUPONS</h5>
                     <h5>WOMEN'S SALE</h5>
                     <h5>MEN'S SALE</h5>
                 </div>
-                <div className="designer"> DESIGNER</div>
-                <div className="community"> COMMUNITY</div>
+                <div className="designer" onClick={()=>navigate("/design")}> DESIGNER</div>
+                <div className="community" onClick={()=>navigate("/offers")} > COMMUNITY</div>
                 <div className="communityhide">
                     <h5>DISCOVER</h5>
                     <h5>MY CLOSET</h5>
                     <h5>EDITORIALS</h5>
                     <h5>INFLUENCER PROGRAM</h5>
                 </div>
-                <div className="why modesens"> WHY MODESENS</div>
+                <div className="why modesens" onClick={()=>navigate("/why_modesens")}> WHY MODESENS</div>
             </div>
             <div className="right_side">
                 <div onClick={()=>navigate("/cart")}>

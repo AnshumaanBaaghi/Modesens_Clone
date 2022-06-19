@@ -17,7 +17,7 @@ const ProductCart = () => {
   const navigate=useNavigate()
   const getCartData=()=>{
     axios({
-        url:`http://localhost:8080/modesens/cart`,
+        url:`https://modesens-clone-web16.herokuapp.commodesens/cart`,
         method:"GET"
     }).then((res)=>{
       setData(res.data)
