@@ -70,6 +70,7 @@ export const deleteCartData=(id)=>(dispatch)=>{
     })
 }
 
+
 // login  
 const LoginAction=(payload)=>({
     type:LOGIN,
@@ -79,6 +80,8 @@ const LoginAction=(payload)=>({
 export const LoginActionSuccess=(val)=>(dispatch)=>{
     dispatch(LoginAction(val))
 }
+
+
 // signup
 // const SignAction=(payload)=>({
 //     type:SIGNUP,
@@ -88,5 +91,7 @@ export const LoginActionSuccess=(val)=>(dispatch)=>{
 // export const SignActionSuccess=(val)=>(dispatch)=>{
 //     dispatch(SignAction(val))
 // }
+
+
    
     

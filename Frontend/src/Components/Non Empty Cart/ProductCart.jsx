@@ -5,34 +5,45 @@ import { useState } from 'react'
 import { deleteCartData } from '../../Redux/PagesRedux/action'
 import { useDispatch } from 'react-redux'
 import "./nonCart.css"
-import { systemProps } from '@chakra-ui/react'
+import Emptycart from '../Empty/Emptycart'
+import { useNavigate } from 'react-router-dom'
+// import { systemProps } from '@chakra-ui/react'
 
 
 
 const ProductCart = () => {
   const dispatch=useDispatch()
   const [Data,setData]=useState([])
+  const navigate=useNavigate()
   const getCartData=()=>{
     axios({
         url:`http://localhost:8080/modesens/cart`,
         method:"GET"
     }).then((res)=>{
-       setData(res.data)
+      setData(res.data)
+      console.log("ji")
     }).catch((err)=>{
         console.log("unable to get product from ur cart-", err);
     })
   }
   useEffect(()=>{
     getCartData()
-  },[Data,setData])
+  },[])
 
   const removeProduct=(id)=>{
     dispatch(deleteCartData(id))
+    setTimeout(()=>{
+      getCartData()
+    },500)
     console.log(id);
   }
   const orderTotal = Data.reduce((acc,el)=>{
     return acc+el.price
   },0)
+  localStorage.setItem("total-amount",orderTotal)
+  if(Data.length===0){
+    return (<Emptycart/>)
+  }
   return (
     <div className='nonEmpty-Container'>
      <div className='nonEmpty-Container-left'>
@@ -83,7 +94,7 @@ const ProductCart = () => {
               <input type="email" className='email-confirmation' />
             </div>
             <div className='right-portion-design'>
-              <button className='checkout-button'>Proceed to Checkout</button>
+              <button className='checkout-button' onClick={()=>navigate("/cart/payment")}>Proceed to Checkout</button>
             </div>
          </div>
      </div>

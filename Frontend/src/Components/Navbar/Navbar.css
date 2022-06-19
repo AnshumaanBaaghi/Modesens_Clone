@@ -2,6 +2,8 @@
   display: flex;
   color: #1c1c1c;
   padding: 20px;
+  justify-content: space-around;
+  /* margin: auto; */
 }
 #logo {
   width: 147px;
@@ -37,7 +39,7 @@
 }
 
 #search {
-  width: 60px;
+  width: 50%;
   border: 1px solid red;
   border: none;
   margin-left: -20px;
@@ -255,4 +257,16 @@
 }
 #loginhide:hover {
   display: block;
+}
+.loginimage{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+.inbtn {
+  color: blueviolet;
+  font-weight: bold;
+}
+.inbtn:hover{
+  color: rgb(64, 230, 64);
 }

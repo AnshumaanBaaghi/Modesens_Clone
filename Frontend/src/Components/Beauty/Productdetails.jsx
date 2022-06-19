@@ -35,18 +35,18 @@ const Productdetails = () => {
                         </Box>
                         <Box marginLeft="0%" marginTop="4%" textAlign={"left"} >
                             <Box>
-                                <Text fontSize="25" color='GrayText'> Minimum Stock</Text>
+                                <Text fontSize="25" color='GrayText' textAlign={"left"}> Minimum Stock</Text>
                             </Box>
-                            <Heading fontFamily="body" fontSize="40" >{el?.name}</Heading>
+                            <Heading fontFamily="body" fontSize="40"  textAlign={"left"}>{el?.name}</Heading>
                         
                             <Box>
-                                <Text fontSize="25" color='GrayText'>{el?.desc}</Text>
+                                <Text fontSize="25" color='GrayText' textAlign={"left"}>{el?.desc}</Text>
                             </Box>
                             <Box>
-                                <Text fontSize="25" color="black">${el?.price} USD</Text>
+                                <Text fontSize="25" color="black" textAlign={"left"}>${el?.price} USD</Text>
                             </Box>
                             <Box>
-                                <Text fontSize="25" color="black">Shop From {el?.stores} Stores</Text>
+                                <Text fontSize="25" color="black" textAlign={"left"}>Shop From {el?.stores} Stores</Text>
                             </Box>
                             <Box>
                                 <Text fontSize="25" color="black" paddingBottom={"10%"}>Join now to earn 276 points from this purchase. <u>Learn more</u></Text>

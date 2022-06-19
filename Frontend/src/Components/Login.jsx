@@ -19,7 +19,7 @@ const Login = () => {
         e.preventDefault();
         try {
             await fireAuth.signInWithPopup(provider);
-            await navigate("/home")
+            await navigate("/")
         } catch (error) {
             alert(error.message)
         }
@@ -39,6 +39,7 @@ const Login = () => {
     const dispatch=useDispatch()
     const handleTrue=()=>{
         dispatch(LoginActionSuccess(true))
+        navigate("/")
     }
 
   return (
@@ -48,9 +49,9 @@ const Login = () => {
                 <div className="col">
                     <img src="https://www.linkpicture.com/q/Web-capture_15-6-2022_85521_modesens.com.jpeg" alt="" className='img'/>
                 </div>
-                <div className="col pl-5 details">
-                    <p className='lead text'>Log in to your account</p>
-                    <p className='text-black text1 pb-4'>Compare across 500+ stores<br/>
+                <div className="col pl-5 pb-5 pt-3 create-sign">
+                    <p className='lead text-text'>Log in to your account</p>
+                    <p className='text-black text-text1 pb-4'>Compare across 500+ stores<br/>
                         to find the best price.</p>
                     <input className='mb-2 pl-5 pr-5 text-center border border-dark height' type="email"  ref={emailRef} placeholder='Email' />
                     <br />

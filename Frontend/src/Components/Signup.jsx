@@ -20,7 +20,7 @@ const Signup = () => {
         e.preventDefault();
         try {
             await fireAuth.signInWithPopup(provider);
-            await navigate("/home")
+            await navigate("/")
         } catch (error) {
             alert(error.message)
         }
@@ -42,6 +42,7 @@ const Signup = () => {
     const dispatch=useDispatch()
     const handleTrue=()=>{
         dispatch(LoginActionSuccess(true))
+        navigate("/")
     }
 
   return (
@@ -51,15 +52,15 @@ const Signup = () => {
                 <div className="col">
                     <img src="https://www.linkpicture.com/q/Web-capture_15-6-2022_85521_modesens.com.jpeg" alt="" className='img'/>
                 </div>
-                <div className="col mr-3 pt-4 pl-5">
-                    <p className=' lead text'>Create an account</p>
-                    <p className='text1 pb-4'>Compare across 500+ stores<br/>
+                <div className="col  pl-5 pb-5 pt-3 create-sign">
+                    <p className=' lead text-text'>Create an account</p>
+                    <p className='text-text1 pb-4'>Compare across 500+ stores<br/>
                     to find the best price.</p>
-                    <input className='mb-2 pl-5 pr-5 text-center border height border-dark' type="text" ref={emailRef} placeholder='Email' />
+                    <input className='mb-2   text-center border height border-dark' type="text" ref={emailRef} placeholder='Email' />
                     <br />
                     <input className='mb-2 pl-5 pr-5 text-center border height border-dark' type="password" ref={passwordRef}placeholder='password'/>
                     <br />
-                    <div className="form-group form-check">
+                    <div className="form-group form-check ">
                         <input type="checkbox" className="form-check-input pointer" id="exampleCheck1"/>
                         <label className="form-check-label " htmlFor="exampleCheck1"><small>Subscribe to personalized sale offer & updates </small></label>
                     </div>

@@ -1,8 +1,31 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { LoginActionSuccess } from "../../Redux/PagesRedux/action";
 import "./Navbar.css";
+import { logOut, useAuth } from "../../firebase/firebase";
+
 
 
 const Navbar = () => {
+    const dispatch=useDispatch()
+    const navigate=useNavigate()
+    const currentUser=useAuth()
+    const handleBoolean=()=>{
+        dispatch(LoginActionSuccess(false))
+        navigate("/login")
+    }
+    // console.log("details",currentUser)
+
+    const handleLogout=async()=>{
+        try {
+            logOut();
+            alert("Logout Successful")
+            navigate("/")
+        } catch (error) {
+            alert(error.message)
+        }
+    }
     return (
         <div id="Navbar">
             <div id="logo">
@@ -13,7 +36,7 @@ const Navbar = () => {
                 />
             </div>
             <div className="categories">
-                <div className="women"> WOMEN</div>
+                <div className="women" onClick={()=>navigate("/beauty")}> WOMEN</div>
                 <div className="womenhide">
 
                     <h5>SHOP ALL</h5>
@@ -96,7 +119,7 @@ const Navbar = () => {
                     <h5>OCCASION</h5>
                 </div>
 
-                <div className="beauty"> BEAUTY</div>
+                <div className="beauty" onClick={()=>navigate("/beauty")}> BEAUTY</div>
                 <div className="beautyhide">
                     <h5>SHOP ALL</h5>
                     <h5>WOMEN'S BEAUTY</h5>
@@ -112,7 +135,7 @@ const Navbar = () => {
                     <h5>BOYS</h5>
                     <h5>SALE</h5>
                 </div>
-                <div className="home"> HOME</div>
+                <div className="home" onClick={()=>navigate("/")}> HOME</div>
                 <div className="homehide">
                     <div className="flex">
                         <div>
@@ -164,16 +187,15 @@ const Navbar = () => {
                 <div className="why modesens"> WHY MODESENS</div>
             </div>
             <div className="right_side">
-                <div>
+                <div onClick={()=>navigate("/cart")}>
                     <img
                         src="https://cdn.modesens.com/static/img/20200612shopping_bag2.svg"
                         alt=""
                     />
                 </div>
-                <div id="login">
-
-                    <img
-                        src="https://cdn.modesens.com/static/img/20200612account_b2.svg"
+                <div id="login" >
+                    <img className="loginimage"
+                        src={currentUser?"https://ca.slack-edge.com/T02QFJUB5DF-U02RBFN2N1Y-dcb969d1b8b8-48":"https://cdn.modesens.com/static/img/20200612account_b2.svg"}
                         alt=""
                     />
                 </div>
@@ -193,7 +215,7 @@ const Navbar = () => {
                     <h5>Invite Friends</h5>
                     <h5>Settings</h5>
                     <hr></hr>
-                    <h5>Login</h5>
+                    {currentUser?<h5 className="inbtn" onClick={handleLogout}>Logout</h5>:<h5 className="inbtn" onClick={handleBoolean}>Login</h5>}
                 </div>
                 <div>
                     <img

@@ -1,25 +1,23 @@
-const express=require("express");
-const connection = require("./mongoDb")
-const modesensRouter=require("./Routes/User")
+const express=require('express')
+const { connection, News } =require("./mongoDb")
+const newsRouter=require("./Routes/news")
 const cors=require("cors")
-const app= express();
+const app=express()
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-app.use(
-    cors({
-        origin:["http://localhost:3000"]
-    })
-)
 
-app.use("/modesens",modesensRouter)
+
+
+app.use("/news",newsRouter)
+app.use("/news",newsRouter)
+app.use("/news",newsRouter)
 
 app.listen(8080,async()=>{
     try {
         await connection
-        console.log("Connected to do");
+        console.log("connected to db");
     } catch (error) {
-        console.log("err",error);
+        console.log("Failed to connect db");
     }
 })
-

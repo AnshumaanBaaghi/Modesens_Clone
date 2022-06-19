@@ -73,34 +73,34 @@ export default function BeautyProducts() {
         </Box>
        </Box>
        <Box textAlign={"left"} marginLeft={"18%"} marginTop={10} lineHeight={8}>
-          <Text fontWeight={"bold"}>Related Category Women</Text>
-          <Text>Beauty Sale</Text>
-          <Text>Beauty</Text>
-          <Text>Home</Text>
-          <Text>Accessories</Text>
-          <Text>Bags</Text>
-          <Text>Clothing</Text>
-          <Text>Shoes</Text>
+          <Text fontWeight={"bold"} textAlign={"left"}>Related Category Women</Text>
+          <Text textAlign={"left"}>Beauty Sale</Text>
+          <Text textAlign={"left"}>Beauty</Text>
+          <Text textAlign={"left"}>Home</Text>
+          <Text textAlign={"left"}>Accessories</Text>
+          <Text textAlign={"left"}>Bags</Text>
+          <Text textAlign={"left"}>Clothing</Text>
+          <Text textAlign={"left"}>Shoes</Text>
        </Box>
        <Box textAlign={"left"} marginLeft={"18%"} marginTop={10} lineHeight={8}>
-          <Text fontWeight={"bold"}>Related Category Women</Text>
-          <Text>Grooming Sale</Text>
-          <Text>Grooming</Text>
-          <Text>Home</Text>
-          <Text>Accessories</Text>
-          <Text>Bags</Text>
-          <Text>Clothing</Text>
-          <Text>Shoes</Text>
+          <Text fontWeight={"bold"} textAlign={"left"}>Related Category Women</Text>
+          <Text textAlign={"left"}>Grooming Sale</Text>
+          <Text textAlign={"left"}>Grooming</Text>
+          <Text textAlign={"left"}>Home</Text>
+          <Text textAlign={"left"}>Accessories</Text>
+          <Text textAlign={"left"}>Bags</Text>
+          <Text textAlign={"left"}>Clothing</Text>
+          <Text textAlign={"left"}>Shoes</Text>
        </Box>
        <Box textAlign={"left"} marginLeft={"18%"} marginTop={10} lineHeight={8}>
-          <Text fontWeight={"bold"}>Related Category Kids</Text>
-          <Text>Care Sale</Text>
-          <Text>Care</Text>
-          <Text>Home</Text>
-          <Text>Accessories</Text>
-          <Text>Bags</Text>
-          <Text>Clothing</Text>
-          <Text>Shoes</Text>
+          <Text fontWeight={"bold"} textAlign={"left"}>Related Category Kids</Text>
+          <Text textAlign={"left"}>Care Sale</Text>
+          <Text textAlign={"left"}>Care</Text>
+          <Text textAlign={"left"}>Home</Text>
+          <Text textAlign={"left"}>Accessories</Text>
+          <Text textAlign={"left"}>Bags</Text>
+          <Text textAlign={"left"}>Clothing</Text>
+          <Text textAlign={"left"}>Shoes</Text>
        </Box>
       </Box>
           </Box>
@@ -128,7 +128,7 @@ export default function BeautyProducts() {
       key={Id}
         role={'group'}
         p={6}
-        maxW={'340px'}
+        maxW={'280px'}
         height={"auto"}
         w={'full'}
         bg={useColorModeValue('white', 'gray.1000')}
